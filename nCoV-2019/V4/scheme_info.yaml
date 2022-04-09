@@ -1,0 +1,10 @@
+pcr_primer_amplicon_scheme: nCoV-2019/V4
+primer_scheme_alias:
+  - ARTIC/V4
+  - SARS-CoV-2/V4
+primer_scheme_developer: ARTIC Network
+vendor:
+  - IDT
+amplicon_size: 400
+citations: 
+  - https://twitter.com/scalene/status/1406992540612583428?lang=en
