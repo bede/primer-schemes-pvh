@@ -37,9 +37,9 @@ if __name__ == '__main__':
     )
 
     # Normalisation
-    df_norm = df[[*fields_to_hash]].sort_values('chromStart')  # Sort by start pos
-    df_norm['seq'] = df_norm['seq'].str.upper()  # Normalise case
     df_norm = df_norm.applymap(lambda x: x.strip() if isinstance(x, str) else x)  # Strip trailing and leading whitespace
+    df_norm['seq'] = df_norm['seq'].str.upper()  # Normalise case
+    df_norm = df[[*fields_to_hash]].sort_values('chromStart', 'seq')  # Sort by start pos and then sequence
     df_norm_text = df_norm.to_csv(sep='\t', header=False, index=False)  
 
     hexdigest = hashlib.md5(df_norm_text.encode()).hexdigest()
